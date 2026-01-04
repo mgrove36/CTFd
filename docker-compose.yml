@@ -3,7 +3,7 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - 9220:8000
+      - ${HTTP_PORT:-9220}:8000
     environment:
       UPLOAD_FOLDER: /var/uploads
       DATABASE_URL: mysql+pymysql://${DB_USER:-ctfd}:${DB_PASSWORD}@db/${DB_NAME:-ctfd}
@@ -19,7 +19,7 @@ services:
       - db
 
   db:
-    image: mariadb:lts
+    image: mariadb:${MARIADB_TAG:-lts}
     restart: unless-stopped
     environment:
       MARIADB_RANDOM_ROOT_PASSWORD: true

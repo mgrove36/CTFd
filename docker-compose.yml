@@ -19,7 +19,7 @@ services:
       - db
 
   db:
-    image: mariadb:latest
+    image: mariadb:lts
     restart: unless-stopped
     environment:
       MARIADB_RANDOM_ROOT_PASSWORD: true

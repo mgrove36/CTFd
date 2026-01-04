@@ -10,8 +10,6 @@ services:
       REDIS_URL: redis://cache:6379
       WORKERS: 1
       LOG_FOLDER: /var/log/CTFd
-      ACCESS_LOG: -
-      ERROR_LOG: -
       REVERSE_PROXY: true
       TRUSTED_HOSTS: ${TRUSTED_HOSTS}
     volumes:
